@@ -6,27 +6,28 @@ show_top_plate = false;
 show_bottom_plate = false;
 show_front_plate = false;
 
-module top_plate_top_half(l=188, w=149, h=4) {
+module top_plate_top_half(l=188, w=149, h=1) {
     difference() {
         cube([l, w, h], center=true);
-        translate([0, -40, -1])
+        translate([0, -40, -0.25])
             add_text(text="Brady M210", size=14);
-        translate([0, -60, -1])
+        translate([0, -60, -0.25])
             add_text(text="Label Printer", size=14);
     }
 }
 
-module top_plate_bottom_half(l=188, w=149, h=4) {
+module top_plate_bottom_half(l=188, w=149, h=1) {
     difference() {
         cube([l, w, h], center=true);
-        translate([0, 60, -1])
+        translate([0, 60, -0.25])
             add_text(text="and Accessories", size=14);
     }
 }
 
-module front_plate(l=197, w=83, h=4) {
+module front_plate(l=197, w=63, h=1) {
     difference() {
         cube([l, w, h], center=true);
+        translate([0, 0, -0.25])
         add_text(text="Brady M210 Label Printer", size=12);
     }
 }
